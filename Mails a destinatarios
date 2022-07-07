@@ -1,0 +1,18 @@
+Sub Enviarcorreos()
+ActiveSheet.Range("A1:L51").Select
+
+For i = 1 To 3
+
+ThisWorkbook.Sheets("Destinatarios").Range("F1").Value = i
+
+ActiveWorkbook.EnvelopeVisible = True
+
+    With ActiveSheet.MailEnvelope
+        .Item.To = ThisWorkbook.Sheets("Destinatarios").Range("B9").Value
+        .Item.Subject = "Informe de Producción"
+        .Item.Send
+
+    End With
+    
+Next i
+End Sub
