@@ -1,0 +1,24 @@
+Option Explicit
+Sub Guardarhoja()
+
+
+
+Dim ruta, nombre As String
+ruta = Range("O1").Value
+nombre = Range("O2").Value
+
+
+
+
+
+ThisWorkbook.ActiveSheet.Copy
+
+
+ActiveWorkbook.SaveAs Filename:=ruta & nombre & ".xlsx"
+
+
+
+ActiveWorkbook.Close
+
+
+End Sub
