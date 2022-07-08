@@ -1,0 +1,106 @@
+Sub Enviarplani()
+'
+' Enviarplani Macro
+Dim día As String
+
+día = ThisWorkbook.Sheets("Día").Range("B1")
+
+If día = "LUNES" Then
+
+ActiveSheet.Range("A29:J48").Select
+
+For i = 1 To 2
+
+ThisWorkbook.Sheets("Día").Range("I1").Value = i
+
+ActiveWorkbook.EnvelopeVisible = True
+
+    With ActiveSheet.MailEnvelope
+        .Item.To = ThisWorkbook.Sheets("Día").Range("E9").Value
+        .Item.Subject = "Plan de Producción"
+        .Item.Send
+
+    End With
+    
+Next i
+
+ElseIf día = "MARTES" Then
+
+ActiveSheet.Range("A49:J69").Select
+
+For i = 1 To 4
+
+ThisWorkbook.Sheets("Día").Range("I1").Value = i
+
+ActiveWorkbook.EnvelopeVisible = True
+
+    With ActiveSheet.MailEnvelope
+        .Item.To = ThisWorkbook.Sheets("Día").Range("E9").Value
+        .Item.Subject = "Plan de Producción"
+        .Item.Send
+
+    End With
+    
+Next i
+
+ElseIf día = "MIÉRCOLES" Then
+
+ActiveSheet.Range("A70:J89").Select
+
+For i = 1 To 4
+
+ThisWorkbook.Sheets("Día").Range("I1").Value = i
+
+ActiveWorkbook.EnvelopeVisible = True
+
+    With ActiveSheet.MailEnvelope
+        .Item.To = ThisWorkbook.Sheets("Día").Range("E9").Value
+        .Item.Subject = "Plan de Producción"
+        .Item.Send
+
+    End With
+    
+Next i
+
+ElseIf día = "JUEVES" Then
+
+ActiveSheet.Range("A90:J109").Select
+
+For i = 1 To 4
+
+ThisWorkbook.Sheets("Día").Range("I1").Value = i
+
+ActiveWorkbook.EnvelopeVisible = True
+
+    With ActiveSheet.MailEnvelope
+        .Item.To = ThisWorkbook.Sheets("Día").Range("E9").Value
+        .Item.Subject = "Plan de Producción"
+        .Item.Send
+
+    End With
+    
+Next i
+
+ElseIf día = "VIERNES" Then
+
+ActiveSheet.Range("A110:J150").Select
+
+For i = 1 To 4
+
+ThisWorkbook.Sheets("Día").Range("I1").Value = i
+
+ActiveWorkbook.EnvelopeVisible = True
+
+    With ActiveSheet.MailEnvelope
+        .Item.To = ThisWorkbook.Sheets("Día").Range("E9").Value
+        .Item.Subject = "Plan de Producción"
+        .Item.Send
+
+    End With
+    
+Next i
+End If
+
+'
+
+End Sub
